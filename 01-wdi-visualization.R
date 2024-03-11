@@ -28,3 +28,9 @@ p + theme_economist() +
   scale_colour_economist()
 
 ggsave(here::here("outputs","refugee_trend.png"))
+
+#task 4: plot top 10 countries hosting refugees
+ref_world %>%
+  arrange(-SM.POP.REFG) %>%
+  mutate(rank = seq(1:dim(.)[1])) %>%
+  filter(rank < 10)
