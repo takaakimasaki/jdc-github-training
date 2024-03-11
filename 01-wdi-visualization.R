@@ -28,3 +28,7 @@ p + theme_economist() +
   scale_colour_economist()
 
 ggsave(here::here("outputs","refugee_trend.png"))
+
+##look at the ranking of countries hosting the largest number of refugees
+ref_world %>%
+  arrange(-SM.POP.REFG) 
